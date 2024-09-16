@@ -1,11 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import { HomePage } from './pages/home/HomePage';
+import "./App.css";
+import { router } from "./routes/routes";
+import { RouterProvider } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Provider } from "react-redux";
+import {store} from "./store/reducers/store";
 
 function App() {
   return (
-    <HomePage></HomePage>
+  <Provider store={store}>
+  <RouterProvider router={router} />
+  </Provider>
   );
 }
-
 export default App;
